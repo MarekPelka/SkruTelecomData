@@ -1,0 +1,55 @@
+<b:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security 
+						http://www.springframework.org/schema/security/spring-security.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+
+	<!-- BEANS FOR STATISTIC_DATA_CONTROLLER (with that it doesnt need autowired 
+	annotation -->
+	<b:bean id="statisticDataDao" class="com.daos.StatisticDataDaoImpl">
+		<b:property name="sessionFactory" ref="sessionFactory" />
+	</b:bean>
+	<b:bean id="statisticDataService" class="com.services.StatisticDataServiceImpl">
+		<b:property name="statisticDataDao" ref="statisticDataDao"></b:property>
+	</b:bean>
+
+	<b:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<b:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<b:property name="url" value="jdbc:mysql://localhost:3306/skru" />
+		<b:property name="username" value="grzegorz" />
+		<b:property name="password" value="123456" />
+	</b:bean>
+
+	<!-- Hibernate 5 SessionFactory Bean definition -->
+	<b:bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<b:property name="dataSource" ref="dataSource" />
+		<b:property name="annotatedClasses">
+			<b:list>
+				<b:value>com.model.StatisticData</b:value>
+			</b:list>
+		</b:property>
+		<b:property name="hibernateProperties">
+			<b:props>
+				<b:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
+				</b:prop>
+				<b:prop key="hibernate.current_session_context_class">thread</b:prop>
+				<b:prop key="hibernate.show_sql">true</b:prop>
+				<!-- CREATE DATABASE -->
+				<!-- <b:prop key="hibernate.hbm2ddl.auto">create</b:prop> -->
+			</b:props>
+		</b:property>
+	</b:bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<b:bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<b:property name="sessionFactory" ref="sessionFactory" />
+	</b:bean>
+
+</b:beans>
