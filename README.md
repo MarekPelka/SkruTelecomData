@@ -1,0 +1,2 @@
+# SkruTelecomData
+Study project.
