@@ -2,7 +2,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
-<title>Chooser page</title>
+<title>Data type chooser page</title>
 <link href="<c:url value='/css/bootstrap.css' />" rel="stylesheet"></link>
 <link href="<c:url value='/css/app.css' />" rel="stylesheet"></link>
 <link rel="stylesheet" type="text/css"
@@ -14,11 +14,6 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-	$(function() {
-		$("#datepicker").datepicker();
-	});
-</script>
 <style>
 h1 {
 	color: white;
@@ -33,34 +28,26 @@ h1 {
 </style>
 </head>
 <body>
-	<c:url var="chooseAction" value="/data/chooser"></c:url>
+	<c:url var="chooseAction" value="/proceededdata/chooser"></c:url>
 	<div id="mainWrapper">
 		<div class="my-container">
 			<div class="my-card">
 				<div class="my-form">
-					<c:url var="loginUrl" value="/login" />
 					<form:form action="${chooseAction}" method="post"
 						class="form-horizontal" commandName="selectionData">
 						<div align="center">
-							<h1>SKRU PROJECT</h1>
+							<h1>PROCEEDED DATA</h1>
 						</div>
 						<div class="input-group input-sm">
-							<label class="input-group-addon" for=dataDate> <i
-								class="fa fa-calendar"></i>
+							<label class="input-group-addon" for=prodeededData> <i
+								class="fa circle"></i>
 							</label>
-							<form:input path="dataDate" value="11/01/2013" type="text"
-								class="form-control" id="datepicker" placeholder="Enter date" />
-						</div>
-						<div class="input-group input-sm">
-							<label class="input-group-addon" for=dataTime> <i
-								class="fa fa-clock-o"></i>
-							</label>
-							<form:input path="dataTime" type="number" min="1" max="31"
-								class="form-control" placeholder="Enter Hour" />
+							<form:radiobutton path="proceededData" value="averages" />
+							Averages<br/>
 						</div>
 						<div class="input-group input-sm">
 							<label class="input-group-addon" for=whichData> <i
-								class="fa fa-clock-o"></i>
+								class="fa square"></i>
 							</label>
 							<form:radiobutton path="whichData" value="smsin" />
 							SmS In<br/>
@@ -78,6 +65,10 @@ h1 {
 								class="btn btn-block btn-primary btn-default"
 								value="Take a look!">
 						</div>
+						<button onclick="location.href='index';"
+							class="btn btn-block btn-primary btn-default">
+							<span>Back</span>
+						</button>
 					</form:form>
 				</div>
 			</div>

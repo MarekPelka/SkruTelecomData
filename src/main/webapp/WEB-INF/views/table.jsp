@@ -32,20 +32,8 @@ h1 {
 			<div class="my-card">
 				<div class="my-form">
 			 		<div align="center">
-							<h1>PROCEEDED DATA</h1>
+							<h1>Interesting points</h1>
 					</div>
-					<button onclick="location.href='data/chooser';"
-						class="btn btn-block btn-primary btn-default">
-						<span>Raw data</span>
-					</button>  
-					<button onclick="location.href='data/chooser';"
-						class="btn btn-block btn-primary btn-default">
-						<span>Process data</span>
-					</button>  
-					<button onclick="location.href='data/chooser';"
-						class="btn btn-block btn-primary btn-default">
-						<span>Interesting points</span>
-					</button>  
 				</div>
 			</div>
 		</div>

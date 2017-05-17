@@ -4,6 +4,7 @@ public class SelectionData {
 	private String dataDate;
 	private String dataTime;
 	private String whichData;
+	private String proceededData;
 
 
 
@@ -30,4 +31,13 @@ public class SelectionData {
 	public void setDataDate(String dataDate) {
 		this.dataDate = dataDate;
 	}
+
+	public String getProceededData() {
+		return proceededData;
+	}
+
+	public void setProceededData(String proceededData) {
+		this.proceededData = proceededData;
+	}
+	
 }

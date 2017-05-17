@@ -6,5 +6,6 @@ import java.util.List;
 import com.model.StatisticData;
 
 public interface StatisticDataDao {
-	public List<StatisticData> getStatisticDataList(Date date, int hour);
+	public List<StatisticData> getRawStatisticDataListFromDatetime(Date date, int hour);
+	public List<StatisticData> getAveragesData();
 }

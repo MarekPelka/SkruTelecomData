@@ -34,15 +34,15 @@ h1 {
 			 		<div align="center">
 							<h1>SKRU PROJECT</h1>
 					</div>
-					<button onclick="location.href='data/chooser';"
+					<button onclick="location.href='rawdata/chooser';"
 						class="btn btn-block btn-primary btn-default">
 						<span>Raw data</span>
 					</button>  
-					<button onclick="location.href='data/proceeded';"
+					<button onclick="location.href='proceededdata/chooser';"
 						class="btn btn-block btn-primary btn-default">
 						<span>Proceeded data</span>
 					</button>  
-					<button onclick="location.href='data/table';"
+					<button onclick="location.href='points/table';"
 						class="btn btn-block btn-primary btn-default">
 						<span>Interesting points</span>
 					</button>  

@@ -19,7 +19,12 @@ public class StatisticDataServiceImpl implements StatisticDataService {
 	}
 
 	@Override
-	public List<StatisticData> getStatisticDataList(Date date, int hour) {
-		return statisticDataDao.getStatisticDataList(date, hour);
+	public List<StatisticData> getRawStatisticDataListFromDatetime(Date date, int hour) {
+		return statisticDataDao.getRawStatisticDataListFromDatetime(date, hour);
+	}
+	
+	@Override
+	public List<StatisticData> getAveragesData() {
+		return statisticDataDao.getAveragesData();
 	}
 }
