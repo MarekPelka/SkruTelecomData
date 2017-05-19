@@ -29,12 +29,111 @@ h1 {
 <body>
 	<div id="mainWrapper">
 		<div class="my-container">
-			<div class="my-card">
-				<div class="my-form">
-			 		<div align="center">
-							<h1>Interesting points</h1>
-					</div>
-				</div>
+			<div align="center">
+				<h1>Biggest daily average</h1>
+				<table border=1>
+					<tr>
+						<th>No.</th>
+						<th>SMS in</th>
+						<th>SMS out</th>
+						<th>Call in</th>
+						<th>Call out</th>
+						<th>Internet traffic</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>20 Dec</td>
+						<td>25 Dec</td>
+						<td>20 Dec</td>
+						<td>20 Dec</td>
+						<td>11 Nov</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>27 Nov</td>
+						<td>24 Dec</td>
+						<td>16 Dec</td>
+						<td>16 Dec</td>
+						<td>10 Nov</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>22 Nov</td>
+						<td>01 Jan</td>
+						<td>23 Dec</td>
+						<td>23 Dec</td>
+						<td>12 Nov</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>13 Dec</td>
+						<td>11 Nov</td>
+						<td>19 Dec</td>
+						<td>19 Dec</td>
+						<td>09 Nov</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>08 Nov</td>
+						<td>19 Nov</td>
+						<td>18 Dec</td>
+						<td>18 Dec</td>
+						<td>04 Nov</td>
+					</tr>
+				</table>
+
+
+				<h1>Smallest daily average</h1>
+				<table border=1>
+					<tr>
+						<th>No.</th>
+						<th>SMS in</th>
+						<th>SMS out</th>
+						<th>Call in</th>
+						<th>Call out</th>
+						<th>Internet traffic</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>29 Dec</td>
+						<td>29 Dec</td>
+						<td>26 Dec</td>
+						<td>26 Dec</td>
+						<td>01 Jan</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>26 Dec</td>
+						<td>28 Dec</td>
+						<td>01 Jan</td>
+						<td>01 Jan</td>
+						<td>31 Dec</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>28 Dec</td>
+						<td>30 Dec</td>
+						<td>29 Dec</td>
+						<td>29 Dec</td>
+						<td>25 Dec</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>03 Nov</td>
+						<td>27 Dec</td>
+						<td>03 Nov</td>
+						<td>03 Nov</td>
+						<td>30 Dec</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>17 Nov</td>
+						<td>26 Dec</td>
+						<td>25 Dec</td>
+						<td>25 Dec</td>
+						<td>29 Dec</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>

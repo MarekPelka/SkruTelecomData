@@ -43,33 +43,34 @@ h1 {
 								class="fa circle"></i>
 							</label>
 							<form:radiobutton path="proceededData" value="averages" />
-							Averages<br/>
+							Averages<br />
 						</div>
 						<div class="input-group input-sm">
 							<label class="input-group-addon" for=whichData> <i
 								class="fa square"></i>
 							</label>
 							<form:radiobutton path="whichData" value="smsin" />
-							SmS In<br/>
+							SmS In<br />
 							<form:radiobutton path="whichData" value="smsout" />
-							SmS Out<br/>
+							SmS Out<br />
 							<form:radiobutton path="whichData" value="callin" />
-							Call In<br/>
+							Call In<br />
 							<form:radiobutton path="whichData" value="callout" />
-							Call Out<br/>
+							Call Out<br />
 							<form:radiobutton path="whichData" value="internettraffic" />
-							Internet Traffic<br/>
+							Internet Traffic<br />
 						</div>
 						<div class="form-actions">
 							<input type="submit"
 								class="btn btn-block btn-primary btn-default"
 								value="Take a look!">
 						</div>
-						<button onclick="location.href='index';"
-							class="btn btn-block btn-primary btn-default">
-							<span>Back</span>
-						</button>
+
 					</form:form>
+					<button onclick="location.href='index';"
+						class="btn btn-block btn-primary btn-default">
+						<span>Back</span>
+					</button>
 				</div>
 			</div>
 		</div>

@@ -12,8 +12,8 @@ public class IndexController {
 		return "redirect:index.jsp";
 	}
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@RequestMapping(value = "/proceededdata/index", method = RequestMethod.GET)
 	public String getIndexUri() {
-		return "index";
+		return "redirect:redirect:index.jsp";
 	}
 }
