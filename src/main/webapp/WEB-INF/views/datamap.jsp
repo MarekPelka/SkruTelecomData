@@ -17,7 +17,7 @@
 	</div>
 	<script type="text/javascript">
 	if (!Detector.webgl) Detector.addGetWebGLMessage();
-
+	var url = 'googlemap.jsp';
     var container, stats;
     var camera, controls, scene, renderer;
     var pickingData = [], pickingTexture, pickingScene;
@@ -32,14 +32,11 @@
     var windowHalfY = window.innerHeight / 2;
 
 
-	var datasmsOut;
-	var datasmsIn;
-	var datasmsIn;
 	
 	
-	var datasmsIn = new Array();
+	var squaresData = new Array();
 	<c:forEach items="${valueList}" var="item">
-	datasmsIn.push("${item}");
+	squaresData.push("${item}");
 	</c:forEach>
 
 
@@ -111,7 +108,7 @@
         for (var i = 0; i < 100; i++) {
             for (var j = 0; j < 100; j++) {
 
-                var h = Math.floor(parseInt(datasmsIn[i * 100 + j] * 3) * 3);
+                var h = Math.floor(parseInt(squaresData[i * 100 + j] * 3) * 3);
 
                 if (h != 0)
                     geom = new THREE.BoxGeometry(1, 1, 1);
@@ -121,8 +118,7 @@
                 var position = new THREE.Vector3();
                 position.x = 10 * i - 495;
                 position.y = 10 * j - 495;
-                position.z = h > 0 ? h / 2 + 2 : h / 2 - 2;
-
+                position.z = h > 0 ? (h/2 + 2) : (h/2 - 2);
                 var rotation = new THREE.Euler();
                 rotation.x = 0;
                 rotation.y = 0;
@@ -211,14 +207,6 @@
         mouseY = -( event.clientY / window.innerHeight ) * 2 + 1;//= ( event.clientY - windowHalfY );
     }
 
-    function onDocumentClick(event) {
-
-        document.getElementById('info').innerHTML =
-            "X: " + highlightBox.position.x + ", Y: " + highlightBox.position.y +
-            "; Height: " + highlightBox.scale.z;
-        var win = window.open('map.html', '_blank');
-        win.focus();
-    }
     function onDocumentMouseDown(event) {
 
         startDate = Date.now();
@@ -230,7 +218,6 @@
             "; Height: " + highlightBox.scale.z;
         var now = Date.now();
         if(now - startDate < 250) {
-            var url = 'map.html';
             $.post(url, function (selectedId) {
                 var win = window.open(url);
                 with (win.document) {
@@ -290,15 +277,5 @@
         renderer.render(scene, camera);
     }
 	</script>
-
-	<!--<c:forEach items="${resultList}" var="data">
-		<tr>
-			<td>VALUES: <c:out value="${data.squareId}" />
-			<c:out value="${data.smsIn}" />
-			<c:out value="${data.smsOut}" />
-			<c:out value="${data.callIn}" />
-			<c:out value="${data.callOut}" /></td>
-		</tr>
-	</c:forEach> -->
 </body>
 </html>

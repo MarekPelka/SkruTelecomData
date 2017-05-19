@@ -17,7 +17,7 @@
 h1 {
 	color: white;
 	font-family: 'Helvetica Neue', sans-serif;
-	font-size: 46px;
+	font-size: 30px;
 	font-weight: 100;
 	line-height: 50px;
 	letter-spacing: 1px;
@@ -132,6 +132,131 @@ h1 {
 						<td>25 Dec</td>
 						<td>25 Dec</td>
 						<td>29 Dec</td>
+					</tr>
+				</table>
+				
+				<h1>Square biggest sms in traffic</h1>
+				<table border=1>
+					<tr>
+						<th>No.</th>
+						<th>Square</th>
+						<th>Days on top</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>5059</td>
+						<td>32/62</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>5161</td>
+						<td>18/62</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>4367</td>
+						<td>2/62</td>
+					</tr>
+				</table>
+				
+				<h1>Square biggest sms out traffic</h1>
+				<table border=1>
+					<tr>
+						<th>No.</th>
+						<th>Square</th>
+						<th>Days on top</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>5059</td>
+						<td>14/62</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>4756</td>
+						<td>11/62</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>4874</td>
+						<td>10/62</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>4855</td>
+						<td>10/62</td>
+					</tr>
+				</table>
+				
+				<h1>Square biggest call in traffic</h1>
+				<table border=1>
+					<tr>
+						<th>No.</th>
+						<th>Square</th>
+						<th>Days on top</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>5059</td>
+						<td>32/62</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>5161</td>
+						<td>18/62</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>5259</td>
+						<td>6/62</td>
+					</tr>
+				</table>
+				
+				<h1>Square biggest call out traffic</h1>
+				<table border=1>
+					<tr>
+						<th>No.</th>
+						<th>Square</th>
+						<th>Days on top</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>5059</td>
+						<td>48/62</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>5161</td>
+						<td>9/62</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>6064</td>
+						<td>4/62</td>
+					</tr>
+				</table>
+				
+				<h1>Square biggest internet traffic</h1>
+				<table border=1>
+					<tr>
+						<th>No.</th>
+						<th>Square</th>
+						<th>Days on top</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>5259</td>
+						<td>32/62</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>5161</td>
+						<td>24/62</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>5059</td>
+						<td>2/62</td>
 					</tr>
 				</table>
 			</div>
