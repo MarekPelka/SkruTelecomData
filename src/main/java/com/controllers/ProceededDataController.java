@@ -36,7 +36,7 @@ public class ProceededDataController {
 
 	@RequestMapping(value = "/chooser", method = RequestMethod.POST)
 	public ModelAndView getAverages(@ModelAttribute("selectionData") SelectionData selectionData) {
-		ModelAndView model = new ModelAndView("datamap");
+		ModelAndView model = new ModelAndView("maprenderer");
 		List<StatisticData> prodeededData = statisticDataService.getAveragesData();
 		switch (selectionData.getProceededData()) {
 		case "averages":

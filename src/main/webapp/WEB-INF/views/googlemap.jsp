@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -25,11 +25,22 @@
       // This example creates a simple polygon representing the Bermuda Triangle.
 
       function initMap() {
+
+
+    	 var rightBottomX  = <c:out value="${rightBottomX}"/>;
+    	 var rightBottomY  = <c:out value="${rightBottomY}"/>;
+    	 var rightTopX  = <c:out value="${rightTopX}"/>;
+    	 var rightTopY  = <c:out value="${rightTopY}"/>;
+    	 var leftBottomX  = <c:out value="${leftBottomX}"/>;
+    	 var leftBottomY  = <c:out value="${leftBottomY}"/>;
+    	 var leftTopX  = <c:out value="${leftTopX}"/>;
+    	 var leftTopY  = <c:out value="${leftTopY}"/>;
+    	 
         var squareCoords = [
-          {lat: 25.774, lng: -80.190},
-          {lat: 18.466, lng: -66.118},
-          {lat: 32.321, lng: -64.757},
-          {lat: 25.774, lng: -80.190}
+          {lat: rightBottomX, lng: rightBottomY},
+          {lat: rightTopX, lng: rightTopY},
+          {lat: leftTopX, lng: leftTopY},
+          {lat: leftBottomX, lng: leftBottomY}
         ];
 		
 	  var map = new google.maps.Map(document.getElementById('map'), {

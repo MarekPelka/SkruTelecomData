@@ -35,7 +35,7 @@ public class RawDataController {
 
 	@RequestMapping(value = "/chooser", method = RequestMethod.POST)
 	public ModelAndView choose(@ModelAttribute("selectionData") SelectionData selectionData) {
-		ModelAndView model = new ModelAndView("datamap");
+		ModelAndView model = new ModelAndView("maprenderer");
 		
 		List<StatisticData> allRawData = new ArrayList<>();
 

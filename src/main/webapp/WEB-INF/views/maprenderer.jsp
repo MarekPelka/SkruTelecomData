@@ -218,14 +218,7 @@
             "; Height: " + highlightBox.scale.z;
         var now = Date.now();
         if(now - startDate < 250) {
-            $.post(url, function (selectedId) {
-                var win = window.open(url);
-                with (win.document) {
-                    open();
-                    write(selectedId);
-                    close();
-                }
-            });
+        	window.open('googlemap/'+selectedId,'popupname',selectedId);
         }
     }
 
