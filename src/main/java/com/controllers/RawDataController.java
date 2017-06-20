@@ -55,7 +55,7 @@ public class RawDataController {
 		
 
 		List<Double> valueList = new ArrayList<>();
-		for (int i = 0; i < 10000; i++) {
+		for (int i = 0; i < allRawData.size(); i++) {
 			valueList.add(0.0);
 		}
 
@@ -63,7 +63,7 @@ public class RawDataController {
 		case "smsin":
 			for (int i = 0; i < 10000; i++) {
 				valueList.set(allRawData.get(i).getSquareId() - 1, allRawData.get(i).getSmsIn());
-			}
+				}
 			break;
 		case "smsout":
 			for (int i = 0; i < 10000; i++) {

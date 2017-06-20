@@ -1,5 +1,6 @@
 package com.daos;
 
+import java.math.BigInteger;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -9,7 +10,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.model.StatisticData;
 
@@ -23,17 +23,18 @@ public class StatisticDataDaoImpl implements StatisticDataDao {
 	}
 
 	@Override
-	public List<StatisticData> getRawStatisticDataListFromDatetime(Date date, int hour) {
+	public List<StatisticData> getRawDataListFromDatetime(Date date, int hour) {
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MMM-dd--");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String minTimeQuery = "SELECT MIN(time) FROM `milano_converted_"+sdf.format(date).toLowerCase()+"`";
+		BigInteger minTime = (BigInteger) sessionFactory.getCurrentSession().createNativeQuery(minTimeQuery).getSingleResult();
+		String dataQuery = "SELECT square_id, AVG(sms_in) as sms_in, AVG(sms_out) as sms_out, AVG(call_in) as call_in, AVG(call_out) as call_out,"
+				+" AVG(internet_traffic) as internet_traffic " + "FROM `milano_converted_" + sdf.format(date).toLowerCase()
+				+ "` where (time BETWEEN " + minTime.add(BigInteger.valueOf(3600000l*(hour - 1))).toString()  
+				+ " AND " + minTime.add(BigInteger.valueOf(3600000l*hour)).toString() + ") GROUP BY square_id";
 		List<StatisticData> dataList = sessionFactory.getCurrentSession()
-				.createNativeQuery(
-						"SELECT square_id, AVG(sms_in) as sms_in, AVG(sms_out) as sms_out, AVG(call_in) as call_in, AVG(call_out) as call_out,"
-								+ " AVG(internet_traffic) as internet_traffic " + "FROM `milano_converted_"
-								+ sdf.format(date).toLowerCase() + String.format("%02d", hour) + "` GROUP BY SQUARE_ID",
-						StatisticData.class)
-				.list();
+				.createNativeQuery(dataQuery,StatisticData.class).list();
 
 		tx.commit();
 		return dataList;
@@ -53,5 +54,32 @@ public class StatisticDataDaoImpl implements StatisticDataDao {
 		tx.commit();
 		return dataList;
 	}
+
+	@Override
+	public List<StatisticData> getMostCallTrafficDay() {
+		Session session = sessionFactory.getCurrentSession();
+		Transaction tx = session.beginTransaction();
+		String dataQuery = "SELECT square_id, AVG(sms_in) as sms_in, AVG(sms_out) as sms_out, AVG(call_in) as call_in, AVG(call_out) as call_out,"
+				+" AVG(internet_traffic) as internet_traffic " + "FROM `milano_converted_2013-12-20` GROUP BY square_id";
+		List<StatisticData> dataList = sessionFactory.getCurrentSession()
+				.createNativeQuery(dataQuery,StatisticData.class).list();
+
+		tx.commit();
+		return dataList;
+	}
+
+	@Override
+	public List<StatisticData> getLeastCallTrafficDay() {
+		Session session = sessionFactory.getCurrentSession();
+		Transaction tx = session.beginTransaction();
+		String dataQuery = "SELECT square_id, AVG(sms_in) as sms_in, AVG(sms_out) as sms_out, AVG(call_in) as call_in, AVG(call_out) as call_out,"
+				+" AVG(internet_traffic) as internet_traffic " + "FROM `milano_converted_2013-12-26` GROUP BY square_id";
+		List<StatisticData> dataList = sessionFactory.getCurrentSession()
+				.createNativeQuery(dataQuery,StatisticData.class).list();
+
+		tx.commit();
+		return dataList;
+	}
+	
 
 }

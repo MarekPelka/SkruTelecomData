@@ -23,7 +23,6 @@
     <script>
 
       // This example creates a simple polygon representing the Bermuda Triangle.
-
       function initMap() {
 
 
@@ -35,17 +34,19 @@
     	 var leftBottomY  = <c:out value="${leftBottomY}"/>;
     	 var leftTopX  = <c:out value="${leftTopX}"/>;
     	 var leftTopY  = <c:out value="${leftTopY}"/>;
+    	 var centerX  = <c:out value="${centerX}"/>;
+    	 var centerY  = <c:out value="${centerY}"/>;
     	 
         var squareCoords = [
-          {lat: rightBottomX, lng: rightBottomY},
-          {lat: rightTopX, lng: rightTopY},
-          {lat: leftTopX, lng: leftTopY},
-          {lat: leftBottomX, lng: leftBottomY}
+          {lat: rightBottomY, lng: rightBottomX},
+          {lat: rightTopY, lng: rightTopX},
+          {lat: leftTopY, lng: leftTopX},
+          {lat: leftBottomY, lng: leftBottomX}
         ];
 		
 	  var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 5,
-          center: square[0],
+          zoom: 18,
+          center: {lat: centerY, lng: centerX},
           mapTypeId: 'terrain'
         });
 
@@ -64,7 +65,7 @@
         square.setMap(map);
       }
     </script>
-    <script async defer
+    <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXqSKCo1EO0qbi9RKwBHWlS2dHScscYKo&callback=initMap">
     </script>
   </body>

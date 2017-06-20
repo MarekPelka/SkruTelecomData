@@ -20,11 +20,21 @@ public class StatisticDataServiceImpl implements StatisticDataService {
 
 	@Override
 	public List<StatisticData> getRawStatisticDataListFromDatetime(Date date, int hour) {
-		return statisticDataDao.getRawStatisticDataListFromDatetime(date, hour);
+		return statisticDataDao.getRawDataListFromDatetime(date, hour);
 	}
 	
 	@Override
 	public List<StatisticData> getAveragesData() {
 		return statisticDataDao.getAveragesData();
+	}
+
+	@Override
+	public List<StatisticData> getMostCallTrafficDay() {
+		return statisticDataDao.getMostCallTrafficDay();
+	}
+
+	@Override
+	public List<StatisticData> getLeastCallTrafficDay() {
+		return statisticDataDao.getLeastCallTrafficDay();
 	}
 }

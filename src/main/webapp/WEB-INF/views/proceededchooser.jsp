@@ -40,14 +40,18 @@ h1 {
 						</div>
 						<div class="input-group input-sm">
 							<label class="input-group-addon" for=prodeededData> <i
-								class="fa circle"></i>
+								class="fa fa-address-card"></i>
 							</label>
 							<form:radiobutton path="proceededData" value="averages" />
 							Averages<br />
+							<form:radiobutton path="proceededData" value="mostcall" />
+							Most call traffic day<br />
+							<form:radiobutton path="proceededData" value="leastcall" />
+							Least call traffic day<br />
 						</div>
 						<div class="input-group input-sm">
 							<label class="input-group-addon" for=whichData> <i
-								class="fa square"></i>
+								class="fa fa-address-card"></i>
 							</label>
 							<form:radiobutton path="whichData" value="smsin" />
 							SmS In<br />

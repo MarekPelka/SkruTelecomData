@@ -52,14 +52,14 @@ h1 {
 						</div>
 						<div class="input-group input-sm">
 							<label class="input-group-addon" for=dataTime> <i
-								class="fa fa-clock-o"></i>
+								class="fa fa-calendar"></i>
 							</label>
 							<form:input path="dataTime" type="number" min="1" max="31"
 								class="form-control" placeholder="Enter Hour" />
 						</div>
 						<div class="input-group input-sm">
 							<label class="input-group-addon" for=whichData> <i
-								class="fa fa-clock-o"></i>
+								class="fa fa-address-card"></i>
 							</label>
 							<form:radiobutton path="whichData" value="smsin" />
 							SmS In<br/>

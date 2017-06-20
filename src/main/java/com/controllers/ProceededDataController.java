@@ -42,6 +42,12 @@ public class ProceededDataController {
 		case "averages":
 			prodeededData = statisticDataService.getAveragesData();
 			break;
+		case "mostcall":
+			prodeededData = statisticDataService.getMostCallTrafficDay();
+			break;
+		case "leastcall":
+			prodeededData = statisticDataService.getLeastCallTrafficDay();
+			break;
 		}
 		Collections.sort(prodeededData, (a1, a2) -> a1.getSquareId().compareTo(a2.getSquareId()));
 

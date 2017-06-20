@@ -17,7 +17,6 @@
 	</div>
 	<script type="text/javascript">
 	if (!Detector.webgl) Detector.addGetWebGLMessage();
-	var url = 'googlemap.jsp';
     var container, stats;
     var camera, controls, scene, renderer;
     var pickingData = [], pickingTexture, pickingScene;
@@ -116,8 +115,8 @@
                     geom = new THREE.BoxGeometry(0, 0, 0);
 
                 var position = new THREE.Vector3();
-                position.x = 10 * i - 495;
-                position.y = 10 * j - 495;
+                position.y = 10 * i - 495;
+                position.x = 10 * j - 495;
                 position.z = h > 0 ? (h/2 + 2) : (h/2 - 2);
                 var rotation = new THREE.Euler();
                 rotation.x = 0;
@@ -218,7 +217,10 @@
             "; Height: " + highlightBox.scale.z;
         var now = Date.now();
         if(now - startDate < 250) {
-        	window.open('googlemap/'+selectedId,'popupname',selectedId);
+			var url = "http://localhost:8080/SKRU_TELECOMMUNICATION_BROWSER/googlemap/" + selectedId;
+			var win = window.open(url);
+		//	win.document.open();
+			
         }
     }
 
